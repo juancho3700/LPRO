@@ -1,0 +1,1 @@
+"nrf":"/home/selmo/ncs/v2.6.0/nrf":"/home/selmo/ncs/v2.6.0/nrf/sysbuild"

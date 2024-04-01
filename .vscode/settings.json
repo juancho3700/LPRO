@@ -1,0 +1,6 @@
+{
+    "nrf-connect.applications": [
+        "${workspaceFolder}/nRFchat"
+    ],
+    "esbonio.sphinx.confDir": ""
+}
