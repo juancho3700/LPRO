@@ -97,7 +97,7 @@ def recibe_por_ttyACM0(puerto='/dev/ttyACM0', baudios=115200):
                 print("Conexion") 
                 partes = line.split(' ')
                 nombre_usuario = partes[1]
-                ubicacion = partes[4]
+                ubicacion = partes[-1]
                 actualizar_usuario(nombre_usuario, ubicacion)
                 print(f"Se actualizó la ubicación de {nombre_usuario} a {ubicacion}")
                     
@@ -124,4 +124,5 @@ def recibe_por_ttyACM0(puerto='/dev/ttyACM0', baudios=115200):
         ser.close()
     
 
-recibe_por_ttyACM0()
+if __name__ == "__main__":
+    recibe_por_ttyACM0()
