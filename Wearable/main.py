@@ -1,3 +1,6 @@
+from saveFiles import saveFiles
+from SpeechToText import STT
+
 import RPi.GPIO as GPIO
 from sys import exit
 
@@ -5,22 +8,18 @@ import pyaudio
 import struct
 import wave
 
+
 BUTTON_PIN = 16
 CHUNK = 1024
 FORMAT = pyaudio.paInt16
 CHANNELS = 1
 RATE = 44100
 
-
-def save_wav (frames):
-    with wave.open ("output.wav", "wb") as file:
-        file.setnchannels (CHANNELS)
-        file.setsampwidth (audio.get_sample_size (FORMAT))
-        file.setframerate (RATE)
-        file.writeframes (b''.join (frames))
+WAV_FILE = "recorded.wav"
+TEXT_FILE = "converted.txt"
 
 
-if __name__ == "__main__":
+def main ():
     GPIO.setmode (GPIO.BCM)
     GPIO.setup (BUTTON_PIN, GPIO.IN, pull_up_down = GPIO.PUD_UP)
     audio = pyaudio.PyAudio ()
@@ -45,9 +44,19 @@ if __name__ == "__main__":
                 frames.append (data)
                 if GPIO.input (BUTTON_PIN) == GPIO.LOW: end = True
 
-            print ("Guardo el archivo\n\n")
-            save_wav (frames)
+            print ("Guardo el archivo wav")
+            saveFiles.save_wav (audio, frames, WAV_FILE, CHANNELS, FORMAT, RATE)
+
+            print ("Audio a texto y guardo\n\n")
+            text = STT.speechToText (WAV_FILE)
+            saveFiles.save_txt (text, TEXT_FILE)
+
+
 
     except KeyboardInterrupt:
         GPIO.cleanup ()
         exit (0)
+
+
+if __name__ == "__main__":
+    main ()
