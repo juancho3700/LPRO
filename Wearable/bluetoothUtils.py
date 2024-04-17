@@ -1,44 +1,57 @@
 from email import message
-from bluetooth import discover_devices
+import threading
+import bluetooth 
 import socket
 
 
 class BluetoothUtil:
 
-    macList = []
+    def __init__ (self):
 
-    def inquiry (self, message):
+        self.macList = ["B8:27:EB:FE:18:12", "58:20:71:83:84:9B"]
+        self.addr = ""
 
-        nearbyDevices = discover_devices (duration = 4, lookup_names = True, flush_cache = True, lookup_class = False)
 
-        for addr, name in nearby_devices:
-            print("  %s" % (addr))
+    def inquiry (self):
 
-            if addr in macList:
-                self.connection (addr, message)
+        nearbyDevices = bluetooth.discover_devices (duration = 4, lookup_names = True, flush_cache = True, lookup_class = False)
+        print ("%d devices detected" % len (nearbyDevices))
+
+        for addr, name in nearbyDevices:
+            print("  %s --- %s" % (addr, name))
+
+            if addr in self.macList:
+                self.addr = addr
                 return
 
+        self.addr = ""
+        return
 
 
-    def connection (self, addr, message):
+    def connection (self, text):
 
         client = socket.socket (socket.AF_BLUETOOTH, socket.SOCK_STREAM, socket.BTPROTO_RFCOMM)
-        client.connect ((addr, 4))
-
-        print ("Cliente conectado...")
-
-        try:
-            while True:
-                data = input (message)
-                client.send (data.encode ("utf-8"))
-
-        except OSError as e:
-            pass
-
+        client.connect ((self.addr, 4))
+        client.send (input (text).encode ("utf-8"))
         client.close ()
+
+
+    def inquiry_thread (self):
+
+        self.addr = ""
+        thread = threading.Thread (target = self.inquiry)
+        thread.start ()
+        return thread
+
 
 
 if __name__ == "__main__":
 
     bl = BluetoothUtil ()
-    bl.inquiry ("Hola que tal")
+    addr = ""
+
+    while not bl.addr:
+
+        bl.inquiry ()
+
+    client = bl.connection ("Hola que tal")

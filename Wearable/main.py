@@ -1,5 +1,6 @@
 from saveFiles import saveFiles
 from SpeechToText import STT
+from bluetoothUtils import BluetoothUtil
 
 import RPi.GPIO as GPIO
 from sys import exit
@@ -23,17 +24,20 @@ def main ():
     GPIO.setmode (GPIO.BCM)
     GPIO.setup (BUTTON_PIN, GPIO.IN, pull_up_down = GPIO.PUD_UP)
     audio = pyaudio.PyAudio ()
+    bl = BluetoothUtil ()
 
-    stream = audio.open (format=FORMAT,
-                         channels=CHANNELS,
-                         rate=RATE,
-                         input=True,
-                         frames_per_buffer=CHUNK)
+    stream = audio.open (format = FORMAT,
+                         channels = CHANNELS,
+                         rate = RATE,
+                         input = True,
+                         frames_per_buffer = CHUNK)
 
     try:
         while True:
             GPIO.wait_for_edge (BUTTON_PIN, GPIO.FALLING)
             GPIO.wait_for_edge (BUTTON_PIN, GPIO.RISING)
+
+            thread = bl.inquiry_thread ()
 
             end = False
             frames = []
@@ -50,6 +54,15 @@ def main ():
             print ("Audio a texto y guardo\n\n")
             text = STT.speechToText (WAV_FILE)
             saveFiles.save_txt (text, TEXT_FILE)
+
+            thread.join ()
+            
+            while not bl.addr:
+                bl.inquiry ()
+
+            print ("Recibi %s. Enviando ..." % text)
+            bl.connection (text)
+            
 
 
 

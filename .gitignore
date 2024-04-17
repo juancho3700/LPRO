@@ -2,3 +2,4 @@
 /Raspberry/output.mp3
 *.wav
 *.txt
+__pycache__/
