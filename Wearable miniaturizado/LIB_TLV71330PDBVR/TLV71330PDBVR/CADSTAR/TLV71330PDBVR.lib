@@ -1,0 +1,16 @@
+.TLV71330PDBVR :1 ;150mA Low-Dropout (LDO) Regulator With Foldback Current Limit for Portable Devices
+SOT95P280X145-5N
+*STM IC
+*NGS
+*PLB 1="IN" 2="GND" 3="EN" 4="NC" 5="OUT"
+*MXP 5
+*DFN TLV71330PDBVR
+~!Mouser Part Number (595-TLV71330PDBVR)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Texas-Instruments/TLV71330PDBVR?qs=biyDIajrTn5InPlo0DzvXw%3D%3D)
+~!Manufacturer_Name (Texas Instruments)
+~!Manufacturer_Part_Number (TLV71330PDBVR)
+~!Link Datasheet (http://www.ti.com/lit/gpn/tlv713p)
+~!Height (1.45mm)
+~!3D_Model (TLV71330PDBVR)
+TLV71330PDBVR
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 

@@ -1,0 +1,26 @@
+### Footprint positions - created on Wed Apr 24 00:37:30 2024 ###
+### Printed by KiCad version 7.0.9
+## Unit = mm, Angle = deg.
+## Side : top
+# Ref     Val                 Package                       PosX       PosY       Rot  Side
+C1        .1uF                C_01005_0402Metric        167.1360   -21.8440  180.0000  top
+C2        .1uF                C_01005_0402Metric        165.1000   -25.6540    0.0000  top
+C3        10_uF               C_01005_0402Metric        167.1360   -21.0820    0.0000  top
+C4        10_uF               C_01005_0402Metric        167.1320   -25.6540  180.0000  top
+C5        .1uF                C_01005_0402Metric        173.9690   -32.2580  180.0000  top
+C6        10_uF               C_01005_0402Metric        181.8430   -32.7660    0.0000  top
+C7        .1uF                C_01005_0402Metric        177.5210   -33.0410  -90.0000  top
+C8        C0402C101KCGACAUTO  C_01005_0402Metric        166.8820   -46.9900  180.0000  top
+C9        C0402C101KCGACAUTO  C_01005_0402Metric        166.8780   -48.5100   90.0000  top
+C10       C0402C101KCGACAUTO  C_01005_0402Metric        166.8570   -50.2920    0.0000  top
+MK1       IM73A135V01         Infineon_PG-LLGA-5-2      170.1420   -48.3480    0.0000  top
+R1        10k                 R_1206_3216Metric         184.1500   -31.4960  -90.0000  top
+R2        10k                 R_1206_3216Metric         173.7975   -29.9720    0.0000  top
+R3        10k                 R_1206_3216Metric         180.6305   -36.3220    0.0000  top
+R4        25k                 R_0805_2012Metric         173.5855   -44.7040  180.0000  top
+R5        25k                 R_0805_2012Metric         170.7915   -51.3080  180.0000  top
+SW1       SW_MEC_5G           Panasonic_EVQPUK_EVQPUB   166.3780   -40.1320  -90.0000  top
+U1        TLV71330PDBV        SOT-23-5                  170.3125   -21.5240  180.0000  top
+U3        LM321               SOT-23-5                  180.8230   -29.9720    0.0000  top
+U4        MCP4152-104E_SN     SOIC127P599X175-8N        177.8000   -22.4790  180.0000  top
+## End

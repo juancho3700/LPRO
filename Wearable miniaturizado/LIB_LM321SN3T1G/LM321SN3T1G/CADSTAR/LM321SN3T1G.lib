@@ -1,0 +1,16 @@
+.LM321SN3T1G :1 ;Operational Amplifiers - Op Amps SINGLE VERSION OF LM358
+SOT95P275X110-5N
+*STM IC
+*NGS
+*PLB 1="IN+" 2="VEE" 3="IN-" 4="OUT" 5="VCC"
+*MXP 5
+*DFN LM321SN3T1G
+~!Mouser Part Number (863-LM321SN3T1G)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/onsemi/LM321SN3T1G?qs=slMPpRTKD5qNVsCzBsHVZA%3D%3D)
+~!Manufacturer_Name (onsemi)
+~!Manufacturer_Part_Number (LM321SN3T1G)
+~!Link Datasheet (https://www.onsemi.com/pub/Collateral/LM321-D.PDF)
+~!Height (1.1mm)
+~!3D_Model (LM321SN3T1G)
+LM321SN3T1G
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 

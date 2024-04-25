@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoxPeak</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>BoxPeak</h1>
+            <div class="login-container">
+                <div class="login-button" onclick="toggleLoginForm()">
+                    <span class="icon">👤</span> <span id="login-status">Iniciar Sesión</span>
+                </div>
+                <div id="logout-button" style="display:none;">
+                    <button onclick="logout()">Cerrar Sesión</button>
+                </div>
+                <div id="formulario-inicio-sesion" class="form-container">
+                    <h2>Ingrese ID y Contraseña</h2>
+                    <label for="id">ID:</label>
+                    <input type="text" id="id" name="id"><br>
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena"><br>
+                    <button class="btn-login" onclick="login()">Login</button>
+                </div>
+                <div id="formulario-agregar" class="form-container" style="display:none;">
+                    <h2>Agregar nuevo usuario</h2>
+                    <form action="/agregar" method="post">
+                        <label for="mac">MAC:</label>
+                        <input type="text" id="mac" name="mac"><br><br>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre"><br><br>
+                        <input type="submit" value="Agregar">
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="contenedor-tabla">
+            <div class="tabla" id="tabla-usuarios-registrados">
+                <h1>Usuarios registrados</h1>
+                <table border="1">
+                    <tr>
+                        <th>Nombre</th>
+                    </tr>
+                    {% for usuario in usuarios_todos %}
+                        <tr>
+                            <td>{{ usuario.Nombre }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+
+            <div class="tabla">
+                <h1>Usuarios conectados</h1>
+                <table id="tabla-usuarios-conectados">
+                    <thead>
+                        <tr>
+                            <th>MAC</th>
+                            <th>Nombre</th>
+                            <th>Ubicación</th>
+                            <th>RSSI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí se llenarán dinámicamente los datos de los usuarios conectados -->
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

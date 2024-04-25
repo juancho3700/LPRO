@@ -1,0 +1,12 @@
+"Id";"Identificador";"Huella";"Cantidad";"Identificación";"Suministrador y ref";
+1;"U3";"SOT-23-5";1;"LM321";;;
+2;"SW1";"Panasonic_EVQPUK_EVQPUB";1;"SW_MEC_5G";;;
+3;"C9,C8,C10";"C_01005_0402Metric";3;"C0402C101KCGACAUTO";;;
+4;"U1";"SOT-23-5";1;"TLV71330PDBV";;;
+5;"U4";"SOIC127P599X175-8N";1;"MCP4152-104E_SN";;;
+6;"C5,C1,C2,C7";"C_01005_0402Metric";4;".1uF";;;
+7;"R4,R5";"R_0805_2012Metric";2;"25k";;;
+8;"R1,R3,R2";"R_1206_3216Metric";3;"10k";;;
+9;"C4,C3,C6";"C_01005_0402Metric";3;"10 uF";;;
+10;"MK1";"Infineon_PG-LLGA-5-2";1;"IM73A135V01";;;
+11;"U2";"RPi_Pico_SMD_TH_MOD";1;"Pico";;;

@@ -1,0 +1,222 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.login-container {
+    position: relative;
+}
+
+.login-button {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+
+.form-container {
+    display: none;
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    width: 200px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-container input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-container .btn-login {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container .btn-login:hover {
+    background-color: #0056b3;
+}
+
+.form-container .btn-login:focus {
+    outline: none;
+}
+
+.tabla {
+    margin: 20px;
+}
+
+.tabla table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla th,
+.tabla td {
+    padding: 8px;
+    border: 1px solid #dddddd;
+    text-align: left;
+}
+
+.tabla th {
+    background-color: #f2f2f2;
+}
+
+.tabla tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+
+/* Estilos del formulario */
+#formulario-inicio-sesion {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    text-align: center;
+}
+
+#formulario-inicio-sesion h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#formulario-inicio-sesion label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#formulario-inicio-sesion input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#formulario-inicio-sesion .btn-login {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#formulario-inicio-sesion .btn-login:hover {
+    background-color: #0056b3;
+}
+
+#formulario-inicio-sesion .btn-login:focus {
+    outline: none;
+}
+
+/* Estilos del formulario de agregar usuario */
+#formulario-agregar {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+#formulario-agregar h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#formulario-agregar label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#formulario-agregar input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#formulario-agregar input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#formulario-agregar input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+#formulario-agregar input[type="submit"]:focus {
+    outline: none;
+}
+
+/* Ocultar elemento */
+.oculto {
+    display: none;
+}

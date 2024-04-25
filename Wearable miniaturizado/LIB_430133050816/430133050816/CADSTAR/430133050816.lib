@@ -1,0 +1,16 @@
+.430133050816 :1 ;WS-TASV SMT long travel tact switch 6 x 6 mm
+"430133050816"
+*STM S
+*NGS
+*PLB 1="COM" 2="NO"
+*MXP 2
+*DFN 430133050816
+~!Mouser Part Number (710-430133050816)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/430133050816?qs=ufv2HEpFn%252BRy3i84BABEDg%3D%3D)
+~!Manufacturer_Name (Wurth Elektronik)
+~!Manufacturer_Part_Number (430133050816)
+~!Link Datasheet (https://www.we-online.com/components/products/datasheet/430133050816.pdf)
+~!Height (5.2mm)
+~!3D_Model (430133050816)
+"430133050816"
+1.1!U 2.1!U 

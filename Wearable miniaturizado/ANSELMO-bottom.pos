@@ -1,0 +1,7 @@
+### Footprint positions - created on Wed Apr 24 00:37:30 2024 ###
+### Printed by KiCad version 7.0.9
+## Unit = mm, Angle = deg.
+## Side : bottom
+# Ref     Val       Package                   PosX       PosY       Rot  Side
+U2        Pico      RPi_Pico_SMD_TH_MOD   186.4360   -44.7040  180.0000  bottom
+## End

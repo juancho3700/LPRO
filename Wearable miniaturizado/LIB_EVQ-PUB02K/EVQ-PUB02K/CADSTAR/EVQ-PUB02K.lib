@@ -1,0 +1,16 @@
+.EVQ-PUB02K :1 ;Tactile Switches small sized s Light Touch Switch
+EVQPUB02K
+*STM S
+*NGS
+*PLB 1="NO_1" 2="COM_1" 3="NO_2" 4="COM_2"
+*MXP 4
+*DFN EVQ-PUB02K
+~!Mouser Part Number (667-EVQ-PUB02K)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Panasonic/EVQ-PUB02K?qs=wX5mvoJE4NFB9NRYXUMGnA%3D%3D)
+~!Manufacturer_Name (Panasonic)
+~!Manufacturer_Part_Number (EVQ-PUB02K)
+~!Link Datasheet (https://componentsearchengine.com/Datasheets/1/EVQ-PUB02K.pdf)
+~!Height (1mm)
+~!3D_Model (EVQ-PUB02K)
+EVQ-PUB02K
+1.1!U 2.1!U 3.1!U 4.1!U 
