@@ -98,10 +98,21 @@ function actualizarTablaUsuariosConectados(datos) {
         celdaNombre.textContent = usuario.Nombre;
         fila.appendChild(celdaNombre);
         const celdaUbicacion = document.createElement("td");
-        celdaUbicacion.textContent = usuario.Ubicacion;
+        if(usuario.Ubicacion == "0x0026"){ 
+            celdaUbicacion.textContent = "Xpeak 1"
+        }else if(usuario.Ubicacion == "0x0027"){
+            celdaUbicacion.textContent = "Xpeak 2"
+        }else if(usuario.Ubicacion == "0x0028"){
+            celdaUbicacion.textContent = "Xpeak 3"
+        }
+        //celdaUbicacion.textContent = usuario.Ubicacion;
+       // if(celdaUbicacion == "0x0027"){ celdaUbicacion = "Xpeak 1"}
         fila.appendChild(celdaUbicacion);
+        const celdaUbiUni= document.createElement("td");
+        celdaUbiUni.textContent = usuario.Ubicacion;
+        fila.appendChild(celdaUbiUni);
         const celdaRSSI = document.createElement("td");
-        celdaRSSI.textContent = usuario.RSSI;
+        celdaRSSI.textContent = usuario.RSSI + " dBm";
         fila.appendChild(celdaRSSI);
         tablaUsuariosConectados.appendChild(fila);
     });

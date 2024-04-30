@@ -80,8 +80,13 @@ def actualizar_usuarios (mac, ubicacion, rssi):
 
 def ubicacion_usuario (nombre):
     busqueda = collection.find_one({"Nombre": nombre})
-    print(busqueda["Ubicacion"])
-    return busqueda["Ubicacion"]
+    if busqueda == None:
+        return 0
+    else:
+        print(busqueda["Ubicacion"])
+        return busqueda["Ubicacion"]
+
+
 
 
 def loop_serial ():
@@ -91,7 +96,12 @@ def loop_serial ():
         
         while True:
             line = ser.readline ().decode ().strip ()
-            print ("Recibido " + line)
+            print(line)
+            if (line.split()[0] == "\x1b[1;32muart:~$") & (line.split()[1] == "\x1b[mchat"):
+                print("Entro en uart")
+                continue
+            line_previo = line.split("<")[1]#.split(">")[0]
+            line_ubicacion = line_previo.split(">")[0]
             string_in = line.find ("-m ") + line.find ("-p ") + 1;
             line = line [string_in:]
             line_split = line.split (" ")
@@ -113,14 +123,23 @@ def loop_serial ():
             elif line_split [0] == "-m":
                 print ("Reenviando aviso")
                 print(line)
-                ubicacion = ubicacion_usuario (line_split [1])
-                if ubicacion:
-                    print (f"El mensaje va para {line_split [1]} en la direccion {ubicacion}")
-                    envio = f"chat private {ubicacion} '-t {line [2:]}' \n"
+                if ubicacion_usuario(line_split[1]) == 0:
+                    print("Usuario no encontrado")
+                    print (line_ubicacion)
+                    envio = f"chat private {line_ubicacion} '-t Usuario no encontrado' \n"
                     ser.write (envio.encode ())
 
                 else:
-                    print (f"No se encontró la ubicación para {line_split [1]}")
+                    ubicacion = ubicacion_usuario (line_split [1])
+
+                    # envio = f"chat private {}"
+                    if ubicacion:
+                        print (f"El mensaje va para {line_split [1]} en la direccion {ubicacion}")
+                        envio = f"chat private {ubicacion} '-t {line [2:]}' \n"
+                        ser.write (envio.encode ())
+
+                    else:
+                        print (f"No se encontró la ubicación para {line_split [1]}")
             
 
 

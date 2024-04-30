@@ -46,10 +46,12 @@
                 <h1>Usuarios registrados</h1>
                 <table border="1">
                     <tr>
+                        <th>MAC</th>
                         <th>Nombre</th>
                     </tr>
                     {% for usuario in usuarios_todos %}
                         <tr>
+                            <td>{{ usuario.MAC }}</td>
                             <td>{{ usuario.Nombre }}</td>
                         </tr>
                     {% endfor %}
@@ -77,6 +79,7 @@
     </div>
     
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    
 </body>
 
 </html>
